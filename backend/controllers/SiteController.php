@@ -65,11 +65,6 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
-    public function actionFoobar()
-    {
-        return $this->render('brbrbrb');
-    }
-
     /**
      * Login action.
      *

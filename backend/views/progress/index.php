@@ -11,7 +11,7 @@ use common\models\Direction;
 /* @var $dataProvider yii\data\ActiveDataProvider */
 /* @var $direction \common\models\Direction */
 
-$this->title = 'Progresses';
+$this->title = 'Progress';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="progress-index">
@@ -19,7 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Progress', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Add Progress', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
 
@@ -42,12 +42,12 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             // 'created_at',
             // 'updated_at',
-            [
-                'attribute' => 'created_by',
-                'content' => function($model) {
-                    return User::findOne(['id' => $model->created_by])->username;
-                }
-            ],
+//            [
+//                'attribute' => 'created_by',
+//                'content' => function($model) {
+//                    return User::findOne(['id' => $model->created_by])->username;
+//                }
+//            ],
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, $model, $key, $index, $column) {
