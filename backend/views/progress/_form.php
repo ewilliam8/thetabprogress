@@ -21,7 +21,7 @@ $direction = Direction::find()->all();
             \yii\helpers\ArrayHelper::map
             ($direction, 'id', 'title'),
             [
-                'prompt' => 'Выбор категории',
+                'prompt' => 'Choose category',
             ]);
     ?>
 
