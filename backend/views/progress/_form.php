@@ -22,7 +22,7 @@ $direction = Direction::find()->andWhere(['created_by' => Yii::$app->user->id])-
             ($direction, 'id', 'title'),
             [
                 'prompt' => 'Choose category',
-            ]);
+            ])->label(false);
     ?>
 
     <?= $form->field($model, 'value')->textInput() ?>

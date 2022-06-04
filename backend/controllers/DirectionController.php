@@ -77,9 +77,16 @@ class DirectionController extends Controller
      */
     public function actionView($id)
     {
-        return $this->render('view', [
-            'model' => $this->findModel($id),
-        ]);
+        $creator = $this->findModel($id)->created_by;
+        $userid = Yii::$app->user->id;
+
+        if($creator == $userid) {
+            return $this->render('view', [
+                'model' => $this->findModel($id),
+            ]);
+        } else {
+            return $this->render('access_error');
+        }
     }
 
     /**
@@ -114,6 +121,11 @@ class DirectionController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $userid = Yii::$app->user->id;
+
+        if($model->created_by != $userid) {
+            return $this->render('access_error');
+        }
 
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);

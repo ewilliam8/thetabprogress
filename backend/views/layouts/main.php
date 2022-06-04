@@ -33,6 +33,9 @@ AppAsset::register($this);
         'options' => [
             'class' => 'navbar navbar-expand-md fixed-top bg-light',
         ],
+        'togglerOptions' => [
+            'class' => ['bg-primary']
+        ]
     ]);
     $menuItems = [
         ['label' => 'Graphic', 'url' => ['/site']],
@@ -53,7 +56,7 @@ AppAsset::register($this);
             . '</li>';
     }
     echo Nav::widget([
-        'options' => ['class' => 'navbar-nav ml-auto'],
+        'options' => ['class' => 'navbar-nav ml-auto text-primary'],
         'items' => $menuItems,
     ]);
     NavBar::end();

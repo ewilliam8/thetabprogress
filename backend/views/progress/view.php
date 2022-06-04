@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model common\models\Progress */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Progresses', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Progress', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
@@ -29,12 +29,12 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
-            'direction_id',
+//            'id',
+//            'direction_id',
             'value',
-             'created_at',
-             'updated_at',
-             'created_by',
+//             'created_at',
+//             'updated_at',
+//             'created_by',
         ],
     ]) ?>
     

@@ -2,8 +2,10 @@
 
 namespace backend\controllers;
 
+use common\models\Direction;
 use common\models\LoginForm;
 use Yii;
+use yii\data\ActiveDataProvider;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -62,7 +64,13 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $dataProvider = new ActiveDataProvider([
+           'query' => Direction::find()->andWhere(['created_by' => Yii::$app->user->id])
+        ]);
+
+        return $this->render('index', [
+            'dataProvider' => $dataProvider,
+        ]);
     }
 
     /**
