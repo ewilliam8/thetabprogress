@@ -1,5 +1,6 @@
 <?php
 
+use common\models\User;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\ActionColumn;
@@ -12,7 +13,6 @@ use common\models\Direction;
 
 $this->title = 'Progresses';
 $this->params['breadcrumbs'][] = $this->title;
-
 ?>
 <div class="progress-index">
 
@@ -43,7 +43,12 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             // 'created_at',
             // 'updated_at',
-            //'created_by',
+            [
+                'attribute' => 'created_by',
+                'content' => function($model) {
+                    return User::findOne(['id' => $model->created_by])->username;
+                }
+            ],
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, $model, $key, $index, $column) {

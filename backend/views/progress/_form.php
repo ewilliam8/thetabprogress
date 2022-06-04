@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\bootstrap4\ActiveForm;
-use \common\models\Direction;
+use common\models\Direction;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Progress */
@@ -27,7 +27,9 @@ $direction = Direction::find()->all();
 
     <?= $form->field($model, 'value')->textInput() ?>
 
-    <?=  $form->field($model, 'created_by')->textInput() ?>
+    <?=  $form->field($model, 'created_by')
+              ->hiddenInput(['value'=> Yii::$app->user->id])
+              ->label(false) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

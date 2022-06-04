@@ -32,15 +32,9 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'direction_id',
             'value',
-            [
-                'attribute' => 'date',
-                'content' => function($model) {
-                    return Yii::$app->formatter->asRelativeTime($model->created_at);
-                }
-            ],
-            // 'created_at',
-            // 'updated_at',
-            // 'created_by',
+             'created_at',
+             'updated_at',
+             'created_by',
         ],
     ]) ?>
     

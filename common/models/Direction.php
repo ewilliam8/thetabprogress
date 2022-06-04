@@ -51,10 +51,10 @@ class Direction extends ActiveRecord
      *
      * @return \yii\db\ActiveQuery|\common\models\query\UserQuery
      */
-    // public function getCreatedBy()
-    // {
-    //     return $this->hasOne(User::className(), ['id' => 'created_by']);
-    // }
+    public function getCreatedBy()
+    {
+        return $this->hasOne(User::className(), ['id' => 'created_by']);
+    }
 
     /**
      * {@inheritdoc}
@@ -87,16 +87,6 @@ class Direction extends ActiveRecord
             'updated_at' => 'Updated At',
             'created_by' => 'Created By',
         ];
-    }
-
-    /**
-     * Gets query for [[CreatedBy]].
-     *
-     * @return \yii\db\ActiveQuery|\common\models\query\UserQuery
-     */
-    public function getCreatedBy()
-    {
-        return $this->hasOne(User::className(), ['id' => 'created_by']);
     }
 
     /**

@@ -42,6 +42,16 @@ class Progress extends ActiveRecord
     }
 
     /**
+     * Gets query for [[CreatedBy]].
+     *
+     * @return \yii\db\ActiveQuery|\common\models\query\UserQuery
+     */
+    public function getCreatedBy()
+    {
+        return $this->hasOne(User::className(), ['id' => 'created_by']);
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function rules()
@@ -67,16 +77,6 @@ class Progress extends ActiveRecord
             'updated_at' => 'Updated At',
             'created_by' => 'Created By',
         ];
-    }
-
-    /**
-     * Gets query for [[CreatedBy]].
-     *
-     * @return \yii\db\ActiveQuery|\common\models\query\UserQuery
-     */
-    public function getCreatedBy()
-    {
-        return $this->hasOne(User::className(), ['id' => 'created_by']);
     }
 
     /**
