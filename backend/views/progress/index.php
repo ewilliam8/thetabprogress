@@ -32,7 +32,6 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'direction_id',
             [
                 'attribute' => 'direction.title',
-                // 'content' => $dataProvider,
             ],
             'value',
             [

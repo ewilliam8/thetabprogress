@@ -3,6 +3,7 @@
 namespace backend\controllers;
 
 use common\models\Progress;
+use Yii;
 use yii\data\ActiveDataProvider;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -49,7 +50,7 @@ class ProgressController extends Controller
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => Progress::find(),
+            'query' => Progress::find()->creator(Yii::$app->user->id),
             /*
             'pagination' => [
                 'pageSize' => 50

@@ -31,4 +31,9 @@ class ProgressQuery extends \yii\db\ActiveQuery
     {
         return parent::one($db);
     }
+
+    public function creator ($userId)
+    {
+        return $this->andWhere(['created_by' => $userId]);
+    }
 }

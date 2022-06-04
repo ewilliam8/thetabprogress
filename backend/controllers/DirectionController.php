@@ -3,6 +3,7 @@
 namespace backend\controllers;
 
 use common\models\Direction;
+use Yii;
 use yii\data\ActiveDataProvider;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -50,7 +51,7 @@ class DirectionController extends Controller
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => Direction::find(),
+            'query' => Direction::find()->creator(Yii::$app->user->id),
             /*
             'pagination' => [
                 'pageSize' => 50

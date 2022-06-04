@@ -9,7 +9,7 @@ use common\models\Direction;
 /* @var $direction common\models\Direction */
 /* @var $form yii\bootstrap4\ActiveForm */
 
-$direction = Direction::find()->all();
+$direction = Direction::find()->andWhere(['created_by' => Yii::$app->user->id])->all();
 ?>
 
 <div class="progress-form">
