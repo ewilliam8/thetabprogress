@@ -36,4 +36,9 @@ class DirectionQuery extends \yii\db\ActiveQuery
     {
         return $this->andWhere(['created_by' => $userId]);
     }
+
+    public function latest()
+    {
+        return $this->orderBy(['created_at' => SORT_DESC]);
+    }
 }

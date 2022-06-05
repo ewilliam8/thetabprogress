@@ -5,6 +5,7 @@ namespace backend\controllers;
 use common\models\Progress;
 use Yii;
 use yii\data\ActiveDataProvider;
+use yii\data\Sort;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -50,7 +51,7 @@ class ProgressController extends Controller
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => Progress::find()->creator(Yii::$app->user->id),
+            'query' => Progress::find()->creator(Yii::$app->user->id)->latest(),
             /*
             'pagination' => [
                 'pageSize' => 50
@@ -81,7 +82,7 @@ class ProgressController extends Controller
 
         if($creator == $userid) {
             return $this->render('view', [
-                'model' => $this->findModel($id),
+                'model' => $this->findModel($id)
             ]);
         } else {
             return $this->render('access_error');

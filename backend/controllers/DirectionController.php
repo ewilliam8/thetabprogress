@@ -51,7 +51,7 @@ class DirectionController extends Controller
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => Direction::find()->creator(Yii::$app->user->id),
+            'query' => Direction::find()->creator(Yii::$app->user->id)->latest(),
             /*
             'pagination' => [
                 'pageSize' => 50
