@@ -4,10 +4,13 @@ namespace backend\controllers;
 
 use common\models\Direction;
 use common\models\LoginForm;
+use common\models\Progress;
 use Yii;
+use yii\base\BaseObject;
 use yii\data\ActiveDataProvider;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use yii\helpers\ArrayHelper;
 use yii\web\Controller;
 use yii\web\Response;
 
@@ -64,13 +67,28 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+
         $dataProvider = new ActiveDataProvider([
-           'query' => Direction::find()->andWhere(['created_by' => Yii::$app->user->id])
+            'query' => Direction::find()->creator(Yii::$app->user->id),
         ]);
 
-        return $this->render('index', [
-            'dataProvider' => $dataProvider,
+        $progress = new ActiveDataProvider([
+            'query' => Progress::find()->limit(7)->asArray()->creator(Yii::$app->user->id)->toArray([]),
         ]);
+
+//        var_dump($progress);
+//         $progress = Progress::findOne(['created_by' => 2]);
+//        $progress = 'it works';
+
+        return $this->render('index', array(
+            'dataProvider' => $dataProvider,
+            'progress' => $progress,
+        ));
+
+//        return $this->render('index', array(
+//            'dataProvider' => $dataProvider,
+//            'progress' => $progress,
+//        ));
     }
 
     /**
