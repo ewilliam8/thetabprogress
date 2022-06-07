@@ -72,23 +72,16 @@ class SiteController extends Controller
             'query' => Direction::find()->creator(Yii::$app->user->id),
         ]);
 
-        $progress = new ActiveDataProvider([
-            'query' => Progress::find()->limit(7)->asArray()->creator(Yii::$app->user->id)->toArray([]),
-        ]);
-
-//        var_dump($progress);
-//         $progress = Progress::findOne(['created_by' => 2]);
-//        $progress = 'it works';
+//        $progress = new ActiveDataProvider([
+//            'query' => Progress::find()->limit(7)->creator(Yii::$app->user->id),
+//        ]);
+//        $progress = Progress::find()->limit(7)->creator(Yii::$app->user->id);
+        $progress = Progress::find()->limit(7)->all();
 
         return $this->render('index', array(
             'dataProvider' => $dataProvider,
             'progress' => $progress,
         ));
-
-//        return $this->render('index', array(
-//            'dataProvider' => $dataProvider,
-//            'progress' => $progress,
-//        ));
     }
 
     /**
