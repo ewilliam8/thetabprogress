@@ -10,19 +10,19 @@ Track your progress professionally using tables and diagrams.
 
 Preview on the main page with graphics. First you need to make a Direction.
 Click the button "Add new Direction" on the main page. Choose the Title and write a description for your Progress direction.  
-![alt text](https://github.com/ewilliam8/thetabprogress/tree/master/backend/web/img/preview.png?raw=true)
+![alt text](https://github.com/ewilliam8/thetabprogress/blob/master/backend/web/img/preview.png?raw=true)
 
 In the tab Directions you can Create Read Update and Delete directions.
-![alt text](https://github.com/ewilliam8/thetabprogress/tree/master/backend/web/img/directions.png?raw=true)
+![alt text](https://github.com/ewilliam8/thetabprogress/blob/master/backend/web/img/directions.png?raw=true)
 
 The detailed view on Directions.
-![alt text](https://github.com/ewilliam8/thetabprogress/tree/master/backend/web/img/detailed.png?raw=true)
+![alt text](https://github.com/ewilliam8/thetabprogress/blob/master/backend/web/img/detailed.png?raw=true)
 
 In the tab Progress you can Create Read Update and Delete your progress.
-![alt text](https://github.com/ewilliam8/thetabprogress/tree/master/backend/web/img/progress.png?raw=true)
+![alt text](https://github.com/ewilliam8/thetabprogress/blob/master/backend/web/img/progress.png?raw=true)
 
 You cannot to see other people progress or direction.
-![alt text](https://github.com/ewilliam8/thetabprogress/tree/master/backend/web/img/denied.png?raw=true)
+![alt text](https://github.com/ewilliam8/thetabprogress/blob/master/backend/web/img/denied.png?raw=true)
 
 DIRECTORY STRUCTURE
 -------------------
