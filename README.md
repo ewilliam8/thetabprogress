@@ -2,24 +2,27 @@
     <a href="https://github.com/yiisoft" target="_blank">
         <img src="https://avatars0.githubusercontent.com/u/993323" height="100px">
     </a>
-    <h1 align="center">Yii 2 Advanced Project Template</h1>
+    <h1 align="center">The Tab Progress</h1>
     <br>
 </p>
 
-Yii 2 Advanced Project Template is a skeleton [Yii 2](http://www.yiiframework.com/) application best for
-developing complex Web applications with multiple tiers.
+Track your progress professionally using tables and diagrams.
 
-The template includes three tiers: front end, back end, and console, each of which
-is a separate Yii application.
+Preview on the main page with graphics. First you need to make a Direction.
+Click the button "Add new Direction" on the main page. Choose the Title and write a description for your Progress direction.  
+![alt text](https://github.com/ewilliam8/thetabprogress/tree/master/backend/web/img/preview.png?raw=true)
 
-The template is designed to work in a team development environment. It supports
-deploying the application in different environments.
+In the tab Directions you can Create Read Update and Delete directions.
+![alt text](https://github.com/ewilliam8/thetabprogress/tree/master/backend/web/img/directions.png?raw=true)
 
-Documentation is at [docs/guide/README.md](docs/guide/README.md).
+The detailed view on Directions.
+![alt text](https://github.com/ewilliam8/thetabprogress/tree/master/backend/web/img/detailed.png?raw=true)
 
-[![Latest Stable Version](https://img.shields.io/packagist/v/yiisoft/yii2-app-advanced.svg)](https://packagist.org/packages/yiisoft/yii2-app-advanced)
-[![Total Downloads](https://img.shields.io/packagist/dt/yiisoft/yii2-app-advanced.svg)](https://packagist.org/packages/yiisoft/yii2-app-advanced)
-[![build](https://github.com/yiisoft/yii2-app-advanced/workflows/build/badge.svg)](https://github.com/yiisoft/yii2-app-advanced/actions?query=workflow%3Abuild)
+In the tab Progress you can Create Read Update and Delete your progress.
+![alt text](https://github.com/ewilliam8/thetabprogress/tree/master/backend/web/img/progress.png?raw=true)
+
+You cannot to see other people progress or direction.
+![alt text](https://github.com/ewilliam8/thetabprogress/tree/master/backend/web/img/denied.png?raw=true)
 
 DIRECTORY STRUCTURE
 -------------------

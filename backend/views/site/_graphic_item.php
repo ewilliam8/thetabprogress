@@ -6,9 +6,8 @@ use yii\helpers\Url;
 
 $progress = Progress::find()->all();
 ?>
-
-<div class="card vw-100 mr-3" style="width: 28rem;">
-    <a href="<?php echo Url::to(['/direction/view', 'id' => $model->id])  ?>">
+<div class="card mr-3 mt-3" style="width: 33rem;">
+    <a href="<?php echo Url::to(['/direction/view', 'id' => $model->id]); ?>">
         <?php $array = [];
         foreach ($progress as $item) {
                 if( $item['created_by'] == Yii::$app->user->id &&
